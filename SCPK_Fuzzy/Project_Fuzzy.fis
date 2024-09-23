@@ -1,0 +1,39 @@
+[System]
+Name='Project_Fuzzy'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=4
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='alur'
+Range=[0 10]
+NumMFs=2
+MF1='jelek':'trapmf',[0 0 4 7]
+MF2='bagus':'trapmf',[4 7 10 10]
+
+[Input2]
+Name='akting'
+Range=[0 10]
+NumMFs=2
+MF1='Buruk':'trapmf',[0 0 3 6]
+MF2='Baik':'trapmf',[3 6 10 10]
+
+[Output1]
+Name='hasil'
+Range=[0 10]
+NumMFs=2
+MF1='rendah':'trapmf',[0 0 1 10]
+MF2='tinggi':'trapmf',[1 10 10 10]
+
+[Rules]
+1 1, 1 (1) : 1
+1 2, 1 (1) : 1
+2 1, 1 (1) : 1
+2 2, 2 (1) : 1
